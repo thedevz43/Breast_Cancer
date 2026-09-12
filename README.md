@@ -205,18 +205,5 @@ This repository is strictly configured to protect patient data and system creden
 * **Data Privacy**: Raw patient ultrasound DICOM/PNG scans (`RAW/`, `PROCESSED/`) are omitted from public version control.
 * **Reproducibility**: Pre-computed 5-fold metadata splits (`SPLITS/`) and deterministic weights (`checkpoints/M6_FINAL/`) allow auditing without exposing sensitive raw patient health information (PHI).
 
----
 
-## 📄 Citation & License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
-If you use M6 or BreastVision in your research, please cite:
-```bibtex
-@article{m6_breast_ultrasound_2026,
-  title={M6: A Leakage-Proof Stratified Patient Cross-Validation Decision-Support System for Calibrated Breast Ultrasound Triage},
-  author={thedevz43 et al.},
-  journal={Medical Imaging & Artificial Intelligence},
-  year={2026}
-}
 ```
