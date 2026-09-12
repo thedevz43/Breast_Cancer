@@ -1,0 +1,81 @@
+# Secret & Environment Files (Strict Security Exclusion)
+*.env
+*.env.*
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.pfx
+secrets/
+credentials/
+*.p12
+
+# Raw & Processed Patient Datasets (Excluded for Data Privacy & Size)
+RAW/
+PROCESSED/
+
+# Large Intermediate ResNet Checkpoints (>50MB)
+MODEL_DEVELOPMENT/checkpoints/m4_resnet_18_*.pt
+
+# Node.js & React Native / Expo Dependencies & Caches
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+
+# Expo & Web Build Outputs
+.expo/
+dist/
+web-build/
+.next/
+out/
+.vercel/
+
+# Android Native Build Outputs & Binaries
+android/.gradle/
+android/app/build/
+android/build/
+android/app/app-release.apk
+android/app/app-debug.apk
+*.apk
+*.aab
+
+# Python & PyTorch Cache, Compiled Modules, & Virtual Envs
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Operating System Files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

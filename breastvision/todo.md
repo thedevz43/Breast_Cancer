@@ -1,0 +1,28 @@
+# Project TODO
+
+- [x] Review the attached BreastVision product specification
+- [x] Initialize Expo mobile project scaffold
+- [x] Write content-specific mobile interface design plan
+- [x] Create project feature and validation backlog
+- [x] Generate and install unique BreastVision app icon assets
+- [x] Update app branding configuration without changing app slug
+- [x] Build persistent mobile navigation and clinical application shell
+- [x] Build Overview dashboard with local study summary cards
+- [x] Build New Analysis image-picker workflow and validation states
+- [x] Implement live/demo mode labeling and guarded demo behavior
+- [x] Implement analysis progress pipeline screen
+- [x] Implement ultrasound viewer controls and segmentation overlay states
+- [x] Implement typed inference response normalization
+- [x] Implement exact QC-first triage hierarchy
+- [x] Implement AI assessment, probability gauge, QC card, and workflow card
+- [x] Implement multi-scale analysis and lesion localization information states
+- [x] Implement local study history persistence, filtering, opening, and deletion
+- [x] Implement retrospective Model Assessment screen
+- [x] Implement Robustness Assessment screen
+- [x] Implement System Information and Settings screens
+- [x] Add backend health status handling without fabricated status
+- [x] Add accessibility labels, focus/press states, and non-color status cues
+- [x] Add deterministic tests for triage and inference normalization
+- [x] Run TypeScript, lint, test, and Expo validation
+- [x] Capture responsive visual verification and fix runtime issues
+- [ ] Save final checkpoint for user review

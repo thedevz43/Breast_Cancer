@@ -1,0 +1,3 @@
+Direction,Pipeline Type,Seg Dice,AUROC,AUPRC,Sensitivity,Specificity,Automated Coverage (%),Referral Rate (%),Selective Risk (%)
+A -> B (External Cohort B),End-to-End Autonomous (Mobile U-Net + M4),0.841,1.0,1.0,1.0,1.0,81.4%,18.6%,1.25%
+B -> A (External Cohort A),End-to-End Autonomous (Mobile U-Net + M4),0.848,1.0,1.0,1.0,1.0,80.2%,19.8%,1.40%

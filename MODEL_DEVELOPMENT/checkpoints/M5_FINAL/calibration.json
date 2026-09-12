@@ -1,0 +1,7 @@
+{
+    "calibration_method": "Platt Scaling (Logistic Regression)",
+    "platt_slope_a": 1.1842,
+    "platt_intercept_b": -0.0921,
+    "brier_score": 0.0382,
+    "expected_calibration_error": 0.0018
+}

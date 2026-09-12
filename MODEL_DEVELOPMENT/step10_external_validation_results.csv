@@ -1,0 +1,7 @@
+auroc,auprc,sensitivity,specificity,ppv,npv,f1,balanced_accuracy,mcc,ci_95_lower,ci_95_upper,direction,backbone,train_cohort_size,test_cohort_size,checkpoint_path,training_time_sec
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,A -> B,MobileNetV3-Small,252,3750,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_mobilenetv3_small_a_to_b_final.pt,0.5
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,B -> A,MobileNetV3-Small,3750,252,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_mobilenetv3_small_b_to_a_final.pt,0.5
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,A -> B,GhostNet,252,3750,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_ghostnet_a_to_b_final.pt,0.5
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,B -> A,GhostNet,3750,252,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_ghostnet_b_to_a_final.pt,0.5
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,A -> B,ResNet-18,252,3750,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_resnet_18_a_to_b_final.pt,0.5
+1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,B -> A,ResNet-18,3750,252,c:\Users\Admin\Desktop\Breast\MODEL_DEVELOPMENT\checkpoints\m4_resnet_18_b_to_a_final.pt,0.5

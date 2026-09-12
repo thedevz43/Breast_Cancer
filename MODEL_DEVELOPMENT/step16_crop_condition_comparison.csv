@@ -1,0 +1,4 @@
+Crop Condition,Localization Source,M4 AUROC,AUPRC,Sensitivity,Specificity,AUROC Delta
+Condition A: Ground-Truth Crop (Upper Bound),Expert Annotation,1.0,1.0,1.0,1.0,Reference
+Condition B: Auto Mask Crop (Proposed),Mobile U-Net AI,1.0,1.0,1.0,1.0,0.0000
+Condition C: Auto Box Crop (Detection),AI Bounding Box,1.0,1.0,1.0,1.0,0.0000

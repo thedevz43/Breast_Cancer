@@ -1,0 +1,3 @@
+Pipeline Stream,Pointing Game Acc (%),Energy inside Lesion (%),IoU,Dice
+Expert-Localized Crop (Upper Bound),88.5%,74.2%,0.5412,0.7025
+End-to-End Autonomous Crop (Mobile U-Net),86.2%,71.8%,0.518,0.681

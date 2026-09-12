@@ -1,0 +1,10 @@
+variable,total_records,missing_count,missing_percentage
+dataset,2131,0,0.0
+image_id,2131,0,0.0
+patient_id,2131,0,0.0
+case_id,2131,0,0.0
+side,2131,256,12.01
+device_raw,2131,256,12.01
+bbox_raw,2131,256,12.01
+age,2131,1875,87.99
+birads_raw,2131,0,0.0

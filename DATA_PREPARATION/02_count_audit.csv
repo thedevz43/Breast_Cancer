@@ -1,0 +1,10 @@
+Metric,Count
+BUS-UCLM Total Raw Files,2049
+BUS-UCLM Class-Separated Images,683
+BrEaST-Lesions Images and Masks,256
+BUS-UCLM & BrEaST Overlapping Images,0
+BUSBRA Raw Images,1875
+BUSBRA BI-RADS Categorized Images,1875
+BUSBRA BI-RADS Match Rate,1875/1875
+Total Exact SHA256 Duplicates Across Dataset,2976
+Total Near-Duplicates Across Dataset,153

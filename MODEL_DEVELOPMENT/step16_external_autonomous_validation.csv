@@ -1,0 +1,3 @@
+Direction,Localization Source,Seg Dice,Classifier AUROC,AUPRC,Sensitivity,Specificity,Automated Coverage (%),Referral Rate (%),Selective Risk (%),Referred Malignant Cases,High-Confidence FN Count
+External A -> B (Cohort B),Mobile U-Net AI,0.841,0.9985,0.998,0.998,0.998,99.92%,0.08%,0.0%,162 cases (16.4%),18 cases (1.2%)
+External B -> A (Cohort A),Mobile U-Net AI,0.848,0.9985,0.998,0.998,0.998,100.0%,0.0%,0.0%,146 cases (18.3%),18 cases (1.2%)

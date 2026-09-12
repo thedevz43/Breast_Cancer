@@ -1,0 +1,7 @@
+{
+    "model_version": "M5.0-FROZEN-FINAL",
+    "calibration_version": "CAL-1.0",
+    "threshold_version": "TP-1.0",
+    "preprocessing_version": "PP-1.0",
+    "evidence_level": "LOCO Multi-Center External Validation"
+}

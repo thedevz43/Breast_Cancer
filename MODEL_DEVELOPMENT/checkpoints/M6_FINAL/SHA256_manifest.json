@@ -1,0 +1,17 @@
+{
+    "version": "M6.0-FROZEN-FINAL",
+    "segmentation_checkpoint": {
+        "filename": "mobile_unet_v2_segmentation.pt",
+        "architecture": "MobileUNetV2",
+        "param_count": 1949306,
+        "size_mb": 7.5,
+        "sha256_hash": "ce5a1e6ba51ae4b6f7697309463a2b751d7ee160d6ef2a41043cdefbae3fe82b"
+    },
+    "classifier_checkpoint": {
+        "filename": "m6_mobilenetv3_small.pt",
+        "architecture": "M6NextGenClassifier",
+        "param_count": 5090,
+        "size_mb": 0.03,
+        "sha256_hash": "c2ae013193bd4ee12b8aaf2da3e8c9c8c1ad9831785e24728ed4c2fb267755f0"
+    }
+}

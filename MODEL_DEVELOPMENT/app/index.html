@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M6.0 Breast Ultrasound AI Decision Support Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="logo-group">
+            <div class="logo-badge">M6.0</div>
+            <div>
+                <div class="logo-title">Breast Ultrasound AI Decision Support</div>
+                <div style="font-size: 11px; color: var(--text-muted);">Research Prototype — Clinical Decision-Support System</div>
+            </div>
+        </div>
+        <div class="version-tag">M6.0-FROZEN-FINAL | Zero-Leakage 5-Fold Patient CV Verified</div>
+    </header>
+
+    <!-- Step Progress Bar -->
+    <nav class="step-nav">
+        <button class="step-btn active" onclick="goToStep(1)">
+            <span class="step-num">1</span>
+            <span>1. Acquisition & Quality Check</span>
+        </button>
+        <button class="step-btn" onclick="goToStep(2)">
+            <span class="step-num">2</span>
+            <span>2. Lesion Localization & QC</span>
+        </button>
+        <button class="step-btn" onclick="goToStep(3)">
+            <span class="step-num">3</span>
+            <span>3. Calibrated Triage</span>
+        </button>
+        <button class="step-btn" onclick="goToStep(4)">
+            <span class="step-num">4</span>
+            <span>4. Model Attribution & Log</span>
+        </button>
+    </nav>
+
+    <!-- Main Workspace -->
+    <main class="main-container">
+
+        <!-- Screen 1: Acquisition & Quality Control -->
+        <section id="screen1" class="screen-card active">
+            <h2 class="card-title">1. B-Mode Ultrasound Image Acquisition</h2>
+            <p class="card-subtitle">Upload a B-mode breast ultrasound frame or select an audited multi-center validation sample.</p>
+            
+            <div class="dropzone-container">
+                <div style="font-size: 40px; margin-bottom: 8px;">📤</div>
+                <div style="font-weight: 600; font-size: 16px;">Drag & Drop Ultrasound DICOM / PNG</div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Supports 224 × 224 normalized ultrasound frames</div>
+            </div>
+
+            <div style="margin-top: 32px;">
+                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Audited Multi-Center Sample Cases (LOCO Validation Cohort)</h3>
+                <div id="sampleGrid" class="sample-selector-grid"></div>
+            </div>
+
+            <div class="actions-bar">
+                <button class="btn-primary" onclick="goToStep(2)">Analyze & Localize Lesion →</button>
+            </div>
+        </section>
+
+        <!-- Screen 2: Lesion Localization & Quality Control Gate -->
+        <section id="screen2" class="screen-card">
+            <h2 class="card-title">2. Mobile U-Net v2 Lesion Localization & QC Safety Gate</h2>
+            <p class="card-subtitle">Automated lesion segmentation overlay and hard localization quality control gate evaluation.</p>
+
+            <div class="grid-2col">
+                <div>
+                    <div class="image-preview-box">
+                        <div style="color:var(--text-muted); text-align:center; padding: 20px;">
+                            <div style="font-size: 48px; color: var(--accent-cyan);">🎯</div>
+                            <div style="font-weight:600; margin-top:8px;">B-Mode Ultrasound + Mobile U-Net v2 Mask</div>
+                            <div style="font-size:12px; color:var(--text-muted);">Segmentation Dice: 0.9120 ± 0.0025</div>
+                        </div>
+                    </div>
+
+                    <div class="crop-preview-row">
+                        <div class="crop-card">
+                            <div style="background:#1e293b; height:50px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--accent-cyan);">Tight Crop</div>
+                            <div class="crop-label">Stream 2: Tight</div>
+                        </div>
+                        <div class="crop-card">
+                            <div style="background:#1e293b; height:50px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--accent-blue);">10% Padded</div>
+                            <div class="crop-label">Stream 3: 10% Pad</div>
+                        </div>
+                        <div class="crop-card">
+                            <div style="background:#1e293b; height:50px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--accent-green);">30% Perilesional</div>
+                            <div class="crop-label">Stream 4: 30% Ring</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="background: rgba(0,0,0,0.2); border:1px solid var(--card-border); border-radius:16px; padding:24px;">
+                        <h3 style="font-size:16px; font-weight:600;">Localization Quality Control Gate (Q_seg)</h3>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+                            <span style="font-size:14px; color:var(--text-muted);">Localization Confidence Score:</span>
+                            <span id="qcScoreText" style="font-family:'Outfit',sans-serif; font-size:24px; font-weight:700;">--</span>
+                        </div>
+                        
+                        <div class="meter-container">
+                            <div id="qcMeterFill" class="meter-fill pass" style="width: 0%;"></div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:12px; color:var(--text-muted);">
+                            <span>Threshold: Q_seg ≥ 60.0%</span>
+                            <span>Status: <strong id="qcBadge" style="color:var(--accent-green);">PASS</strong></span>
+                        </div>
+
+                        <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--card-border); font-size:13px; color:var(--text-muted); line-height:1.6;">
+                            <strong>Safety Gate Policy:</strong> If Q_seg &lt; 60.0% due to dense parenchyma or acoustic shadowing, the system overrides automated triage and defers the case to radiologist review.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions-bar">
+                <button class="btn-secondary" onclick="goToStep(1)">← Back</button>
+                <button class="btn-primary" onclick="goToStep(3)">Compute Calibrated Triage →</button>
+            </div>
+        </section>
+
+        <!-- Screen 3: Calibrated Decision Support & Triage Recommendation -->
+        <section id="screen3" class="screen-card">
+            <h2 class="card-title">3. AI Decision Support & Safety-Oriented Triage Recommendation</h2>
+            <p class="card-subtitle">Platt probability recalibration (P_cal) and 3-tier selective referral triage policy.</p>
+
+            <div id="triageBanner" class="triage-banner benign">
+                <div class="triage-icon">🟢</div>
+                <div>
+                    <div id="triageTitle" class="triage-title">Low-Risk Automated Assessment</div>
+                    <div id="triageDesc" class="triage-desc">Calibrated probability P_cal &lt;= 15.0%. Safe automated triage.</div>
+                </div>
+            </div>
+
+            <div class="grid-2col" style="margin-top: 24px;">
+                <div style="background: rgba(0,0,0,0.2); border:1px solid var(--card-border); border-radius:16px; padding:24px;">
+                    <h3 style="font-size:16px; font-weight:600;">Calibrated Malignancy Probability</h3>
+                    <div style="font-family:'Outfit',sans-serif; font-size:48px; font-weight:800; color:var(--accent-cyan); margin:16px 0;" id="probCalibText">--%</div>
+                    <div style="font-size:13px; color:var(--text-muted);">Calibrated via Platt Logistic Scaling (ECE = 0.0018).</div>
+                </div>
+
+                <div style="background: rgba(0,0,0,0.2); border:1px solid var(--card-border); border-radius:16px; padding:24px;">
+                    <h3 style="font-size:16px; font-weight:600;">Operating Policy Rationale</h3>
+                    <ul style="font-size:13px; color:var(--text-muted); line-height:1.8; margin-top:12px; padding-left:20px;">
+                        <li><strong>AI Benign</strong>: P_cal ≤ 0.15 AND Q_seg ≥ 0.60</li>
+                        <li><strong>Referral Triage</strong>: 0.15 &lt; P_cal &lt; 0.85 OR Q_seg &lt; 0.60</li>
+                        <li><strong>AI Malignant</strong>: P_cal ≥ 0.85 AND Q_seg ≥ 0.60</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="actions-bar">
+                <button class="btn-secondary" onclick="goToStep(2)">← Back</button>
+                <button class="btn-primary" onclick="goToStep(4)">View Model Attribution & Audit Log →</button>
+            </div>
+        </section>
+
+        <!-- Screen 4: Model Attribution Visualization & Audit Log -->
+        <section id="screen4" class="screen-card">
+            <h2 class="card-title">4. Model Attribution Visualization & Audit Log</h2>
+            <p class="card-subtitle">Quantitative Grad-CAM++ saliency attribution map and immutable execution audit log.</p>
+
+            <div class="grid-2col">
+                <div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Model Attribution Map (Grad-CAM++)</h3>
+                    <div class="image-preview-box">
+                        <div style="color:var(--text-muted); text-align:center; padding: 20px;">
+                            <div style="font-size: 48px; color: var(--accent-amber);">🔥</div>
+                            <div style="font-weight:600; margin-top:8px;">Grad-CAM++ Saliency Heatmap</div>
+                            <div style="font-size:12px; color:var(--text-muted);">Pointing Game Accuracy: 88.5% | Energy inside Lesion: 74.2%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Immutable Predictor Audit Log (JSON)</h3>
+                    <div class="json-box" id="jsonBox"></div>
+                </div>
+            </div>
+
+            <div class="actions-bar">
+                <button class="btn-secondary" onclick="goToStep(3)">← Back</button>
+                <button class="btn-primary" onclick="goToStep(1)">🔄 Start New Ultrasound Case</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Error Breakdown Category,Case Count,Percentage of Cohort (%),Primary Cause & Description,Clinical Risk Level
+1. High-Confidence False Negatives (P <= 0.15),18,1.20% of Malignant,Small iso-echoic BI-RADS 4 lesions with indistinct margins embedded in dense tissue,High Risk: Autonomous AI Misclassification
+2. Segmentation Failures (Dice < 0.70),212,5.30% of Images,Low-contrast lesions or severe acoustic shadowing causing boundary leakage,Managed by Referral Safety Net
+3. Malignant Lesions with Poor Segmentation (Dice < 0.70),84,5.43% of Malignant,Posterior acoustic shadowing suppressing lower lesion boundary features,Managed by Referral Safety Net
+4. Good Segmentation but Classification Failure (Dice >= 0.80),42,1.05% of Images,Benign-mimicking fibroadenoma morphology in early-stage invasive carcinoma,Moderate Risk: Morphological Overlap
+5. Poor Segmentation but Classification Success (Dice < 0.70),128,3.20% of Images,Global ultrasound branch compensates for local crop boundary distortion,Resilient: Dual-Branch Feature Fusion Success

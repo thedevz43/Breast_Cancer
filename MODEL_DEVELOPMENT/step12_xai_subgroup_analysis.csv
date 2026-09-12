@@ -1,0 +1,7 @@
+Category Type,Subgroup,Sample Count,Pointing Game Acc (%),Energy inside Lesion (%),IoU,Dice
+Diagnostic Prediction,Correct Benign,52,100.0%,28.4%,0.2026,0.3369
+Diagnostic Prediction,Correct Malignant,48,100.0%,28.4%,0.2026,0.3369
+Step 11 Decision Triage,AI Accepted,77,100.0%,28.4%,0.2026,0.3369
+Step 11 Decision Triage,Referral,23,100.0%,28.4%,0.2026,0.3369
+Confidence Band,High Confidence,51,100.0%,28.4%,0.2026,0.3369
+Confidence Band,Low Confidence,49,100.0%,28.4%,0.2026,0.3369

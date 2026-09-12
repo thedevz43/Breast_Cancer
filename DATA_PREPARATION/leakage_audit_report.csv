@@ -1,0 +1,7 @@
+Check,Status
+Cohort A Patient Cross-Fold Leakage,PASSED (0 overlap)
+Cohort B Patient Cross-Fold Leakage,PASSED (0 overlap)
+External Test Patient Leakage (Cohort A vs Cohort B),PASSED (0 overlap)
+External Test Exact Hash Leakage,PASSED (0 overlap)
+Post-Diagnostic Predictor Leakage,PASSED (Pathology/Histology excluded from model inputs)
+Preprocessing Statistic Leakage,PASSED (Fold-wise stats calculated inside training loops)

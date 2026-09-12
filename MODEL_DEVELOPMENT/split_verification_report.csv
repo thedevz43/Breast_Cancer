@@ -1,0 +1,6 @@
+Check,Overlapping_Patients,Status
+Cohort A Patient Cross-Fold Leakage,0,PASSED
+Cohort B Patient Cross-Fold Leakage,0,PASSED
+Pooled Patient Cross-Fold Leakage,0,PASSED
+External Test Patient Overlap (Cohort A vs Cohort B),0,PASSED
+External Test SHA256 Image Leakage,0,PASSED

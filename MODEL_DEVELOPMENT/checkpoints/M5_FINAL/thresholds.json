@@ -1,0 +1,6 @@
+{
+    "tau_lower": 0.15,
+    "tau_upper": 0.85,
+    "qc_threshold_qseg": 0.6,
+    "override_policy": "Q_seg < 0.60 -> MANDATORY REFERRAL"
+}

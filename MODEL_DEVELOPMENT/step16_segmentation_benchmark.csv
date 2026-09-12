@@ -1,0 +1,3 @@
+Segmentation Model,Dice Coefficient,IoU (Jaccard Index),Sensitivity,Specificity,Parameters,Model Size (MB),Latency (ms)
+Mobile U-Net (Selected),0.845,0.732,0.865,0.982,1.93 M,7.35 MB,40.87 ms
+Lightweight U-Net,0.821,0.698,0.842,0.978,0.48 M,1.84 MB,14.56 ms

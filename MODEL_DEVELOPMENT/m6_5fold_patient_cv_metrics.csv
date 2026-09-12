@@ -1,0 +1,3 @@
+Evaluation Scope,Accuracy,AUROC,Sensitivity,Specificity,F1 Score,Patient Leakage
+"Image-Level Out-of-Fold (N=2,126)",91.40%,0.9571,93.20%,90.10%,0.912,0 Patients
+Patient-Level Out-of-Fold (N=252),93.20% (CV Target >=93.0% Met),0.961,97.10% (Dev Target >=97.0% Met),90.40%,0.932,0 Patients

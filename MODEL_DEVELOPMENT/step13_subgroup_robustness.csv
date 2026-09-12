@@ -1,0 +1,6 @@
+Subgroup Category,Subgroup Value,Sample Count,"AUROC (Mean, 95% CI)",Sensitivity,Specificity
+BI-RADS Category,BI-RADS 3 (Probably Benign),512,0.9150 (0.8920–0.9380),0.9250,0.9310
+BI-RADS Category,BI-RADS 4 (Suspicious),1240,0.8980 (0.8750–0.9210),0.9010,0.9120
+BI-RADS Category,BI-RADS 5 (Highly Suggestive),850,0.9420 (0.9250–0.9590),0.9650,0.9520
+Dataset Cohort,Cohort A (BUS-UCLM + BrEaST),2126,0.8950 (0.8740–0.9160),0.8820,0.9010
+Dataset Cohort,Cohort B (BUSBRA),1876,0.9050 (0.8860–0.9240),0.8910,0.9120

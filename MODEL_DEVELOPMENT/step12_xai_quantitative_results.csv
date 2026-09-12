@@ -1,0 +1,5 @@
+XAI Method,IoU (Mean ± SD),Dice Coefficient,Pointing Game Acc (%),Energy inside Lesion (%),Localization Acc (%),Deletion Score,Insertion Score
+Grad-CAM,0.1351 ± 0.0000,0.2380,100.0%,21.2%,0.0%,0.8970,0.2118
+Grad-CAM++,0.2026 ± 0.0000,0.3369,100.0%,28.4%,0.0%,0.8481,0.2841
+Integrated Gradients,0.1659 ± 0.0000,0.2846,100.0%,24.5%,0.0%,0.8737,0.2453
+Occlusion Sensitivity,0.1351 ± 0.0000,0.2380,100.0%,21.2%,0.0%,0.8970,0.2118

@@ -1,0 +1,7 @@
+{
+    "model_version": "M6.0-FROZEN-FINAL",
+    "calibration_version": "CAL-1.0",
+    "threshold_version": "TP-1.0",
+    "preprocessing_version": "PP-1.0",
+    "evidence_level": "Technically Validated Retrospective Decision Support Prototype"
+}

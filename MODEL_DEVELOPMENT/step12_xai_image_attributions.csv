@@ -1,0 +1,401 @@
+iou,dice,pointing_game,energy_inside_lesion_pct,localization_accuracy,deletion_score,insertion_score,patient_id,image_id,direction,true_label,predicted_probability,predicted_class,subgroup,referral_status,confidence_category,xai_method
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0001,bus_0001-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0001,bus_0001-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0001,bus_0001-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0001,bus_0001-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0001,bus_0001-r,A -> B,1,0.8849,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0001,bus_0001-r,A -> B,1,0.8849,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0001,bus_0001-r,A -> B,1,0.8849,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0001,bus_0001-r,A -> B,1,0.8849,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0002,bus_0002-l,A -> B,0,0.1285,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0002,bus_0002-l,A -> B,0,0.1285,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0002,bus_0002-l,A -> B,0,0.1285,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0002,bus_0002-l,A -> B,0,0.1285,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0002,bus_0002-r,A -> B,0,0.1199,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0002,bus_0002-r,A -> B,0,0.1199,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0002,bus_0002-r,A -> B,0,0.1199,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0002,bus_0002-r,A -> B,0,0.1199,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0003,bus_0003-l,A -> B,1,0.9654,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0003,bus_0003-l,A -> B,1,0.9654,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0003,bus_0003-l,A -> B,1,0.9654,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0003,bus_0003-l,A -> B,1,0.9654,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0003,bus_0003-r,A -> B,1,0.9619,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0003,bus_0003-r,A -> B,1,0.9619,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0003,bus_0003-r,A -> B,1,0.9619,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0003,bus_0003-r,A -> B,1,0.9619,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0004,bus_0004-l,A -> B,0,0.1582,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0004,bus_0004-l,A -> B,0,0.1582,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0004,bus_0004-l,A -> B,0,0.1582,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0004,bus_0004-l,A -> B,0,0.1582,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0004,bus_0004-r,A -> B,0,0.1098,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0004,bus_0004-r,A -> B,0,0.1098,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0004,bus_0004-r,A -> B,0,0.1098,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0004,bus_0004-r,A -> B,0,0.1098,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0005,bus_0005-l,A -> B,1,0.9764,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0005,bus_0005-l,A -> B,1,0.9764,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0005,bus_0005-l,A -> B,1,0.9764,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0005,bus_0005-l,A -> B,1,0.9764,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0005,bus_0005-r,A -> B,1,0.8477,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0005,bus_0005-r,A -> B,1,0.8477,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0005,bus_0005-r,A -> B,1,0.8477,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0005,bus_0005-r,A -> B,1,0.8477,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0006,bus_0006-s,A -> B,1,0.8523,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0006,bus_0006-s,A -> B,1,0.8523,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0006,bus_0006-s,A -> B,1,0.8523,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0006,bus_0006-s,A -> B,1,0.8523,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0007,bus_0007-l,A -> B,0,0.0673,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0007,bus_0007-l,A -> B,0,0.0673,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0007,bus_0007-l,A -> B,0,0.0673,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0007,bus_0007-l,A -> B,0,0.0673,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0007,bus_0007-r,A -> B,0,0.1548,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0007,bus_0007-r,A -> B,0,0.1548,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0007,bus_0007-r,A -> B,0,0.1548,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0007,bus_0007-r,A -> B,0,0.1548,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0008,bus_0008-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0008,bus_0008-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0008,bus_0008-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0008,bus_0008-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0008,bus_0008-r,A -> B,0,0.2099,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0008,bus_0008-r,A -> B,0,0.2099,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0008,bus_0008-r,A -> B,0,0.2099,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0008,bus_0008-r,A -> B,0,0.2099,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0009,bus_0009-l,A -> B,1,0.9091,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0009,bus_0009-l,A -> B,1,0.9091,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0009,bus_0009-l,A -> B,1,0.9091,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0009,bus_0009-l,A -> B,1,0.9091,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0009,bus_0009-r,A -> B,1,0.9484,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0009,bus_0009-r,A -> B,1,0.9484,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0009,bus_0009-r,A -> B,1,0.9484,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0009,bus_0009-r,A -> B,1,0.9484,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0010,bus_0010-l,A -> B,1,0.9488,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0010,bus_0010-l,A -> B,1,0.9488,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0010,bus_0010-l,A -> B,1,0.9488,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0010,bus_0010-l,A -> B,1,0.9488,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0010,bus_0010-r,A -> B,1,0.9099,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0010,bus_0010-r,A -> B,1,0.9099,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0010,bus_0010-r,A -> B,1,0.9099,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0010,bus_0010-r,A -> B,1,0.9099,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0011,bus_0011-l,A -> B,0,0.2416,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0011,bus_0011-l,A -> B,0,0.2416,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0011,bus_0011-l,A -> B,0,0.2416,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0011,bus_0011-l,A -> B,0,0.2416,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0011,bus_0011-r,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0011,bus_0011-r,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0011,bus_0011-r,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0011,bus_0011-r,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0012,bus_0012-l,A -> B,1,0.987,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0012,bus_0012-l,A -> B,1,0.987,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0012,bus_0012-l,A -> B,1,0.987,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0012,bus_0012-l,A -> B,1,0.987,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0012,bus_0012-r,A -> B,1,0.8569,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0012,bus_0012-r,A -> B,1,0.8569,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0012,bus_0012-r,A -> B,1,0.8569,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0012,bus_0012-r,A -> B,1,0.8569,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0013,bus_0013-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0013,bus_0013-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0013,bus_0013-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0013,bus_0013-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0013,bus_0013-r,A -> B,0,0.1818,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0013,bus_0013-r,A -> B,0,0.1818,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0013,bus_0013-r,A -> B,0,0.1818,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0013,bus_0013-r,A -> B,0,0.1818,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0014,bus_0014-s,A -> B,1,0.8597,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0014,bus_0014-s,A -> B,1,0.8597,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0014,bus_0014-s,A -> B,1,0.8597,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0014,bus_0014-s,A -> B,1,0.8597,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0015,bus_0015-s,A -> B,1,0.8746,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0015,bus_0015-s,A -> B,1,0.8746,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0015,bus_0015-s,A -> B,1,0.8746,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0015,bus_0015-s,A -> B,1,0.8746,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0016,bus_0016-l,A -> B,1,0.8577,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0016,bus_0016-l,A -> B,1,0.8577,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0016,bus_0016-l,A -> B,1,0.8577,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0016,bus_0016-l,A -> B,1,0.8577,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0016,bus_0016-r,A -> B,1,0.8821,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0016,bus_0016-r,A -> B,1,0.8821,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0016,bus_0016-r,A -> B,1,0.8821,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0016,bus_0016-r,A -> B,1,0.8821,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0017,bus_0017-s,A -> B,1,0.9336,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0017,bus_0017-s,A -> B,1,0.9336,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0017,bus_0017-s,A -> B,1,0.9336,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0017,bus_0017-s,A -> B,1,0.9336,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0018,bus_0018-s,A -> B,1,0.7885,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0018,bus_0018-s,A -> B,1,0.7885,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0018,bus_0018-s,A -> B,1,0.7885,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0018,bus_0018-s,A -> B,1,0.7885,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0019,bus_0019-l,A -> B,0,0.2071,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0019,bus_0019-l,A -> B,0,0.2071,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0019,bus_0019-l,A -> B,0,0.2071,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0019,bus_0019-l,A -> B,0,0.2071,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0019,bus_0019-r,A -> B,0,0.1322,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0019,bus_0019-r,A -> B,0,0.1322,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0019,bus_0019-r,A -> B,0,0.1322,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0019,bus_0019-r,A -> B,0,0.1322,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0020,bus_0020-l,A -> B,0,0.0308,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0020,bus_0020-l,A -> B,0,0.0308,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0020,bus_0020-l,A -> B,0,0.0308,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0020,bus_0020-l,A -> B,0,0.0308,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0020,bus_0020-r,A -> B,0,0.1971,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0020,bus_0020-r,A -> B,0,0.1971,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0020,bus_0020-r,A -> B,0,0.1971,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0020,bus_0020-r,A -> B,0,0.1971,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0021,bus_0021-l,A -> B,1,0.7932,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0021,bus_0021-l,A -> B,1,0.7932,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0021,bus_0021-l,A -> B,1,0.7932,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0021,bus_0021-l,A -> B,1,0.7932,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0021,bus_0021-r,A -> B,1,0.9446,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0021,bus_0021-r,A -> B,1,0.9446,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0021,bus_0021-r,A -> B,1,0.9446,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0021,bus_0021-r,A -> B,1,0.9446,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0022,bus_0022-l,A -> B,0,0.1384,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0022,bus_0022-l,A -> B,0,0.1384,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0022,bus_0022-l,A -> B,0,0.1384,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0022,bus_0022-l,A -> B,0,0.1384,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0022,bus_0022-r,A -> B,0,0.0369,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0022,bus_0022-r,A -> B,0,0.0369,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0022,bus_0022-r,A -> B,0,0.0369,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0022,bus_0022-r,A -> B,0,0.0369,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0023,bus_0023-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0023,bus_0023-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0023,bus_0023-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0023,bus_0023-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0023,bus_0023-r,A -> B,0,0.2551,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0023,bus_0023-r,A -> B,0,0.2551,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0023,bus_0023-r,A -> B,0,0.2551,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0023,bus_0023-r,A -> B,0,0.2551,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0024,bus_0024-l,A -> B,0,0.1588,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0024,bus_0024-l,A -> B,0,0.1588,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0024,bus_0024-l,A -> B,0,0.1588,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0024,bus_0024-l,A -> B,0,0.1588,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0024,bus_0024-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0024,bus_0024-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0024,bus_0024-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0024,bus_0024-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0025,bus_0025-l,A -> B,0,0.1913,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0025,bus_0025-l,A -> B,0,0.1913,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0025,bus_0025-l,A -> B,0,0.1913,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0025,bus_0025-l,A -> B,0,0.1913,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0025,bus_0025-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0025,bus_0025-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0025,bus_0025-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0025,bus_0025-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0026,bus_0026-s,A -> B,0,0.1413,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0026,bus_0026-s,A -> B,0,0.1413,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0026,bus_0026-s,A -> B,0,0.1413,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0026,bus_0026-s,A -> B,0,0.1413,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0027,bus_0027-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0027,bus_0027-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0027,bus_0027-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0027,bus_0027-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0027,bus_0027-r,A -> B,1,0.7716,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0027,bus_0027-r,A -> B,1,0.7716,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0027,bus_0027-r,A -> B,1,0.7716,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0027,bus_0027-r,A -> B,1,0.7716,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0028,bus_0028-l,A -> B,0,0.012,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0028,bus_0028-l,A -> B,0,0.012,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0028,bus_0028-l,A -> B,0,0.012,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0028,bus_0028-l,A -> B,0,0.012,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0028,bus_0028-r,A -> B,0,0.1003,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0028,bus_0028-r,A -> B,0,0.1003,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0028,bus_0028-r,A -> B,0,0.1003,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0028,bus_0028-r,A -> B,0,0.1003,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0029,bus_0029-s,A -> B,1,0.8853,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0029,bus_0029-s,A -> B,1,0.8853,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0029,bus_0029-s,A -> B,1,0.8853,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0029,bus_0029-s,A -> B,1,0.8853,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0030,bus_0030-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0030,bus_0030-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0030,bus_0030-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0030,bus_0030-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0031,bus_0031-s,A -> B,1,0.9637,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0031,bus_0031-s,A -> B,1,0.9637,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0031,bus_0031-s,A -> B,1,0.9637,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0031,bus_0031-s,A -> B,1,0.9637,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0032,bus_0032-l,A -> B,1,0.9858,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0032,bus_0032-l,A -> B,1,0.9858,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0032,bus_0032-l,A -> B,1,0.9858,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0032,bus_0032-l,A -> B,1,0.9858,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0032,bus_0032-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0032,bus_0032-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0032,bus_0032-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0032,bus_0032-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0033,bus_0033-l,A -> B,0,0.1063,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0033,bus_0033-l,A -> B,0,0.1063,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0033,bus_0033-l,A -> B,0,0.1063,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0033,bus_0033-l,A -> B,0,0.1063,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0033,bus_0033-r,A -> B,0,0.0787,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0033,bus_0033-r,A -> B,0,0.0787,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0033,bus_0033-r,A -> B,0,0.0787,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0033,bus_0033-r,A -> B,0,0.0787,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0034,bus_0034-l,A -> B,1,0.8195,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0034,bus_0034-l,A -> B,1,0.8195,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0034,bus_0034-l,A -> B,1,0.8195,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0034,bus_0034-l,A -> B,1,0.8195,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0034,bus_0034-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0034,bus_0034-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0034,bus_0034-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0034,bus_0034-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0035,bus_0035-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0035,bus_0035-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0035,bus_0035-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0035,bus_0035-l,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0035,bus_0035-r,A -> B,0,0.0126,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0035,bus_0035-r,A -> B,0,0.0126,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0035,bus_0035-r,A -> B,0,0.0126,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0035,bus_0035-r,A -> B,0,0.0126,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0036,bus_0036-l,A -> B,0,0.1029,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0036,bus_0036-l,A -> B,0,0.1029,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0036,bus_0036-l,A -> B,0,0.1029,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0036,bus_0036-l,A -> B,0,0.1029,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0036,bus_0036-r,A -> B,0,0.203,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0036,bus_0036-r,A -> B,0,0.203,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0036,bus_0036-r,A -> B,0,0.203,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0036,bus_0036-r,A -> B,0,0.203,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0037,bus_0037-s,A -> B,1,0.7597,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0037,bus_0037-s,A -> B,1,0.7597,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0037,bus_0037-s,A -> B,1,0.7597,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0037,bus_0037-s,A -> B,1,0.7597,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0038,bus_0038-s,A -> B,0,0.0523,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0038,bus_0038-s,A -> B,0,0.0523,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0038,bus_0038-s,A -> B,0,0.0523,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0038,bus_0038-s,A -> B,0,0.0523,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0039,bus_0039-l,A -> B,0,0.0157,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0039,bus_0039-l,A -> B,0,0.0157,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0039,bus_0039-l,A -> B,0,0.0157,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0039,bus_0039-l,A -> B,0,0.0157,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0039,bus_0039-r,A -> B,0,0.0312,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0039,bus_0039-r,A -> B,0,0.0312,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0039,bus_0039-r,A -> B,0,0.0312,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0039,bus_0039-r,A -> B,0,0.0312,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0040,bus_0040-s,A -> B,0,0.1501,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0040,bus_0040-s,A -> B,0,0.1501,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0040,bus_0040-s,A -> B,0,0.1501,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0040,bus_0040-s,A -> B,0,0.1501,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0041,bus_0041-l,A -> B,1,0.8329,1,Correct Malignant,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0041,bus_0041-l,A -> B,1,0.8329,1,Correct Malignant,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0041,bus_0041-l,A -> B,1,0.8329,1,Correct Malignant,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0041,bus_0041-l,A -> B,1,0.8329,1,Correct Malignant,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0041,bus_0041-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0041,bus_0041-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0041,bus_0041-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0041,bus_0041-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0042,bus_0042-l,A -> B,0,0.046,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0042,bus_0042-l,A -> B,0,0.046,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0042,bus_0042-l,A -> B,0,0.046,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0042,bus_0042-l,A -> B,0,0.046,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0042,bus_0042-r,A -> B,0,0.2224,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0042,bus_0042-r,A -> B,0,0.2224,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0042,bus_0042-r,A -> B,0,0.2224,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0042,bus_0042-r,A -> B,0,0.2224,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0043,bus_0043-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0043,bus_0043-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0043,bus_0043-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0043,bus_0043-s,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0044,bus_0044-l,A -> B,0,0.1868,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0044,bus_0044-l,A -> B,0,0.1868,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0044,bus_0044-l,A -> B,0,0.1868,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0044,bus_0044-l,A -> B,0,0.1868,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0044,bus_0044-r,A -> B,0,0.1002,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0044,bus_0044-r,A -> B,0,0.1002,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0044,bus_0044-r,A -> B,0,0.1002,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0044,bus_0044-r,A -> B,0,0.1002,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0045,bus_0045-l,A -> B,1,0.9788,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0045,bus_0045-l,A -> B,1,0.9788,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0045,bus_0045-l,A -> B,1,0.9788,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0045,bus_0045-l,A -> B,1,0.9788,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0045,bus_0045-r,A -> B,1,0.9373,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0045,bus_0045-r,A -> B,1,0.9373,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0045,bus_0045-r,A -> B,1,0.9373,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0045,bus_0045-r,A -> B,1,0.9373,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0046,bus_0046-l,A -> B,1,0.9145,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0046,bus_0046-l,A -> B,1,0.9145,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0046,bus_0046-l,A -> B,1,0.9145,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0046,bus_0046-l,A -> B,1,0.9145,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0046,bus_0046-r,A -> B,1,0.8941,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0046,bus_0046-r,A -> B,1,0.8941,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0046,bus_0046-r,A -> B,1,0.8941,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0046,bus_0046-r,A -> B,1,0.8941,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0047,bus_0047-l,A -> B,0,0.125,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0047,bus_0047-l,A -> B,0,0.125,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0047,bus_0047-l,A -> B,0,0.125,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0047,bus_0047-l,A -> B,0,0.125,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0047,bus_0047-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0047,bus_0047-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0047,bus_0047-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0047,bus_0047-r,A -> B,0,0.01,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0048,bus_0048-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0048,bus_0048-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0048,bus_0048-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0048,bus_0048-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0048,bus_0048-r,A -> B,1,0.9271,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0048,bus_0048-r,A -> B,1,0.9271,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0048,bus_0048-r,A -> B,1,0.9271,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0048,bus_0048-r,A -> B,1,0.9271,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0049,bus_0049-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0049,bus_0049-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0049,bus_0049-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0049,bus_0049-l,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0049,bus_0049-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0049,bus_0049-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0049,bus_0049-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0049,bus_0049-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0050,bus_0050-l,A -> B,1,0.8935,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0050,bus_0050-l,A -> B,1,0.8935,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0050,bus_0050-l,A -> B,1,0.8935,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0050,bus_0050-l,A -> B,1,0.8935,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0050,bus_0050-r,A -> B,1,0.9167,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0050,bus_0050-r,A -> B,1,0.9167,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0050,bus_0050-r,A -> B,1,0.9167,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0050,bus_0050-r,A -> B,1,0.9167,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0051,bus_0051-l,A -> B,0,0.0463,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0051,bus_0051-l,A -> B,0,0.0463,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0051,bus_0051-l,A -> B,0,0.0463,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0051,bus_0051-l,A -> B,0,0.0463,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0051,bus_0051-r,A -> B,0,0.0424,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0051,bus_0051-r,A -> B,0,0.0424,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0051,bus_0051-r,A -> B,0,0.0424,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0051,bus_0051-r,A -> B,0,0.0424,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0052,bus_0052-l,A -> B,1,0.8974,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0052,bus_0052-l,A -> B,1,0.8974,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0052,bus_0052-l,A -> B,1,0.8974,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0052,bus_0052-l,A -> B,1,0.8974,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0052,bus_0052-r,A -> B,1,0.8606,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0052,bus_0052-r,A -> B,1,0.8606,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0052,bus_0052-r,A -> B,1,0.8606,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0052,bus_0052-r,A -> B,1,0.8606,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0053,bus_0053-l,A -> B,0,0.1529,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0053,bus_0053-l,A -> B,0,0.1529,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0053,bus_0053-l,A -> B,0,0.1529,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0053,bus_0053-l,A -> B,0,0.1529,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0053,bus_0053-r,A -> B,0,0.0768,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0053,bus_0053-r,A -> B,0,0.0768,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0053,bus_0053-r,A -> B,0,0.0768,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0053,bus_0053-r,A -> B,0,0.0768,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0054,bus_0054-s,A -> B,0,0.1059,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0054,bus_0054-s,A -> B,0,0.1059,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0054,bus_0054-s,A -> B,0,0.1059,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0054,bus_0054-s,A -> B,0,0.1059,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0055,bus_0055-l,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0055,bus_0055-l,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0055,bus_0055-l,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0055,bus_0055-l,A -> B,0,0.0133,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0055,bus_0055-r,A -> B,0,0.1153,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0055,bus_0055-r,A -> B,0,0.1153,0,Correct Benign,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0055,bus_0055-r,A -> B,0,0.1153,0,Correct Benign,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0055,bus_0055-r,A -> B,0,0.1153,0,Correct Benign,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0056,bus_0056-l,A -> B,0,0.1889,0,Correct Benign,Referral,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0056,bus_0056-l,A -> B,0,0.1889,0,Correct Benign,Referral,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0056,bus_0056-l,A -> B,0,0.1889,0,Correct Benign,Referral,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0056,bus_0056-l,A -> B,0,0.1889,0,Correct Benign,Referral,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0056,bus_0056-r,A -> B,0,0.0856,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0056,bus_0056-r,A -> B,0,0.0856,0,Correct Benign,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0056,bus_0056-r,A -> B,0,0.0856,0,Correct Benign,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0056,bus_0056-r,A -> B,0,0.0856,0,Correct Benign,AI Accepted,High Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0057,bus_0057-l,A -> B,1,0.8753,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0057,bus_0057-l,A -> B,1,0.8753,1,Correct Malignant,AI Accepted,Low Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0057,bus_0057-l,A -> B,1,0.8753,1,Correct Malignant,AI Accepted,Low Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0057,bus_0057-l,A -> B,1,0.8753,1,Correct Malignant,AI Accepted,Low Confidence,Occlusion Sensitivity
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0057,bus_0057-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM
+0.2026,0.3369,1.0,28.41,0.0,0.8481,0.2841,BUSBRA_P0057,bus_0057-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Grad-CAM++
+0.1659,0.2846,1.0,24.53,0.0,0.8737,0.2453,BUSBRA_P0057,bus_0057-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Integrated Gradients
+0.1351,0.238,1.0,21.18,0.0,0.897,0.2118,BUSBRA_P0057,bus_0057-r,A -> B,1,0.99,1,Correct Malignant,AI Accepted,High Confidence,Occlusion Sensitivity

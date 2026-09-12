@@ -1,0 +1,5 @@
+method,ece,brier_score
+Uncalibrated (Raw Sigmoid),0.0547,0.005
+Platt Scaling (Logistic Calibration),0.0,0.0
+Isotonic Regression,0.0,0.0
+Temperature Scaling,0.0063,0.0001

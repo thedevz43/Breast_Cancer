@@ -1,0 +1,4 @@
+Actual Label,Predicted Malignant (Pos),Predicted Benign (Neg),Total
+Actual Malignant (Pos),770,20,790
+Actual Benign (Neg),55,1281,1336
+Total,825,1301,2126

@@ -1,0 +1,8 @@
+Stress Test Scenario,AUROC,Delta AUROC,Sensitivity,Delta Sensitivity,Specificity,Delta Specificity,High-Conf FN Count,QC Gate Interception
+Clean Baseline,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Low Contrast Shift,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Speckle Noise Corruption,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Gaussian Blur Distortion,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Brightness & Gain Shift,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Severe Acoustic Shadowing,1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60
+Resolution Resizing (112x112),1.0,+0.0000,100.00%,+0.00%,100.00%,+0.00%,0,100% Intercepted by Q_seg < 0.60

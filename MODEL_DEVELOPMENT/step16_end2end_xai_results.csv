@@ -1,0 +1,3 @@
+XAI Method,Pipeline Condition,Pointing Game Acc (%),Energy inside Lesion (%),IoU,Dice
+Grad-CAM++,Ground-Truth Crop (Upper Bound),88.5%,74.2%,0.5412,0.7025
+Grad-CAM++,End-to-End Autonomous (Mobile U-Net Crop),86.2%,71.8%,0.518,0.681

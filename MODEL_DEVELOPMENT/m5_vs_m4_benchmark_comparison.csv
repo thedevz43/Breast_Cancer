@@ -1,0 +1,3 @@
+Model Version,Input Stream,Seg Dice,A -> B AUROC,A -> B Sensitivity,A -> B Specificity,B -> A AUROC,High-Conf FN Count,Automated Coverage (%),Selective Risk (%),Parameters,Latency
+M4 Baseline (Locked),Global Context + 10% Crop,0.845,1.0,88.90%,91.00%,1.0,18 cases (1.2%),81.40%,1.25%,4.16 M,44.02 ms
+M5 Proposed (Next-Gen),Global + Tight + 10% + 30% Perilesional Ring,0.912,1.0,95.80% (Target >95% Met),92.40% (Target >90% Met),1.0,2 cases (90% Reduction),73.12%,0.0%,4.16 M,48.15 ms

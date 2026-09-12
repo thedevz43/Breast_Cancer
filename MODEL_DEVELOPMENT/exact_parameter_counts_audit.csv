@@ -1,0 +1,8 @@
+Architecture Name,Trainable Parameter Count,Total Parameter Count,Formatted Count,Model Size (MB)
+MobileNetV3-Small Baseline (Single Branch),481,481,0.00 M (481 params),0.0
+GhostNet Baseline (Single Branch),481,481,0.00 M (481 params),0.0
+ResNet-18 Baseline (Single Branch),9601,9601,"0.01 M (9,601 params)",0.04
+Mobile U-Net (Segmentation Network),1927009,1927009,"1.93 M (1,927,009 params)",7.35
+M4-MobileNetV3-Small (Proposed Dual Branch),4160961,4160961,"4.16 M (4,160,961 params)",15.87
+M4-GhostNet (Dual Branch),649025,649025,"0.65 M (649,025 params)",2.48
+M4-ResNet-18 (Dual Branch),22813633,22813633,"22.81 M (22,813,633 params)",87.03

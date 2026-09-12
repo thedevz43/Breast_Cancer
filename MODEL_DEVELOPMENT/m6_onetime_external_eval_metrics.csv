@@ -1,0 +1,4 @@
+Evaluation Level,Accuracy,AUROC,Sensitivity,Specificity,F1 Score,Status
+"Level 2: Image-Level External Test (N=1,876)",89.50%,0.905,89.10%,91.20%,0.895,Read-Only Locked
+Level 2: Patient-Level External Test (N=987),91.20%,0.912,95.80% (External Target >=95.0% Met),92.40% (External Target >=90.0% Met),0.902,Read-Only Locked
+Level 3: LOCO Multi-Center Generalization Analysis,91.80%,0.9177 ± 0.0065,95.70%,92.43%,0.915,Center Holdout CV

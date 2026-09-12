@@ -1,0 +1,4 @@
+Comparison Pair,Model A AUROC,Model B AUROC,AUROC Diff,95% CI,Z-Score,p-value,Significant (p < 0.05)
+M4-MobileNetV3 vs M4-GhostNet,1.0,1.0,0.0,0.0 to 0.0,0.0,1.000000,No (Equivalence)
+M4-ResNet18 vs M4-MobileNetV3,1.0,1.0,0.0,0.0 to 0.0,0.0,1.000000,No (Equivalence)
+M4-MobileNetV3 vs M1-SingleBranch Baseline,1.0,1.0,0.0,0.0 to 0.0,0.0,1.000000,No

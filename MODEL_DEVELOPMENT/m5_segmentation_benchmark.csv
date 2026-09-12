@@ -1,0 +1,3 @@
+Segmentation Architecture,Loss Function,Dice Coefficient (Mean ± SD),IoU (Jaccard Index),Sensitivity,Specificity,Failure Tier (<0.70 Dice),Parameters
+Mobile U-Net v1 (M4 Baseline),Standard BCE + Dice Loss,0.8450 ± 0.0033,0.7320 ± 0.0042,0.865,0.982,5.30% of cases,1.93 M
+Mobile U-Net v2 (M5 Proposed),Compound Boundary Loss (Dice + BCE + Boundary),0.9120 ± 0.0025,0.8380 ± 0.0031,0.925,0.989,1.10% of cases (80% Reduction),1.93 M

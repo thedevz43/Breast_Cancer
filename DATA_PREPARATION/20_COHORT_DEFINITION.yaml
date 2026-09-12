@@ -1,0 +1,20 @@
+cohort_A:
+  description: Merged BUS-UCLM and BrEaST-Lesions datasets eliminating duplicate image
+    counts
+  name: UCLM_BrEaST_Unified
+  source_datasets:
+  - BUS-UCLM
+  - BrEaST-Lesions-USG-images_and_masks
+  unique_cases: 256
+cohort_B:
+  description: BUSBRA dataset with histology, BI-RADS, bounding boxes, device metadata,
+    and masks
+  name: BUSBRA_Full
+  source_datasets:
+  - BUSBRA
+  - busbra_birads
+  unique_views: 1876
+dataset_version: v1.0
+exclusion_policy: Exclusions are strictly based on corrupt file structure or missing
+  labels, never model performance.
+patient_grouping_variable: patient_id
