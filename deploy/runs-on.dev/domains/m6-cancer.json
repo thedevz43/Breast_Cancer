@@ -1,0 +1,15 @@
+{
+  "name": "m6-cancer",
+  "owner": {
+    "github": "thedevz43"
+  },
+  "claimedAt": "2026-10-28T15:45:00.000Z",
+  "records": {
+    "CNAME": "m6-cancer.onrender.com"
+  },
+  "subdomains": {
+    "api": {
+      "CNAME": "m6-cancer-api.onrender.com"
+    }
+  }
+}

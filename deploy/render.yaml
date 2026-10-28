@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: breastvision-platform
+    env: docker
+    dockerfilePath: ./deploy/Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8008

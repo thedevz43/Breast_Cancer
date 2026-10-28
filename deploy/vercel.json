@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://breastvision-api.onrender.com/api/$1"
+    },
+    {
+      "source": "/mobile/(.*)",
+      "destination": "/breastvision/dist/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/MODEL_DEVELOPMENT/app/$1"
+    }
+  ]
+}

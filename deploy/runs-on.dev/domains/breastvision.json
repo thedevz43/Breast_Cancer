@@ -1,0 +1,15 @@
+{
+  "name": "breastvision",
+  "owner": {
+    "github": "thedevz43"
+  },
+  "claimedAt": "2026-10-28T15:45:00.000Z",
+  "records": {
+    "CNAME": "breastvision.onrender.com"
+  },
+  "subdomains": {
+    "api": {
+      "CNAME": "breastvision-api.onrender.com"
+    }
+  }
+}

@@ -19,10 +19,14 @@ const LOCAL_IP = "10.38.243.216";
 const EMULATOR_IP = "10.0.2.2";
 
 // Choose dynamic endpoint based on platform and client
-const API_URL = Platform.OS === "android"
+const API_URL = process.env.EXPO_PUBLIC_API_URL
+  ? process.env.EXPO_PUBLIC_API_URL
+  : Platform.OS === "android"
   ? `http://${EMULATOR_IP}:8008`
   : Platform.OS === "web"
-  ? (typeof window !== "undefined" && window.location.hostname ? `http://${window.location.hostname}:8008` : `http://${LOCAL_IP}:8008`)
+  ? (typeof window !== "undefined" && window.location.hostname
+      ? (window.location.protocol === "https:" ? `${window.location.origin}` : `http://${window.location.hostname}:8008`)
+      : `http://${LOCAL_IP}:8008`)
   : `http://${LOCAL_IP}:8008`;
 
 const STORAGE_KEY = "breastvision.localStudies";

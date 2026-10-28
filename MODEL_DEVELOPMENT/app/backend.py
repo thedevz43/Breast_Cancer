@@ -1,4 +1,5 @@
 import io
+import os
 import sys
 import json
 import torch
@@ -8,6 +9,7 @@ import pandas as pd
 from PIL import Image
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
 # Add src/ to sys.path
@@ -61,6 +63,7 @@ def load_pytorch_models():
         print(f"[OK] Loaded {len(predictions_lookup)} audited dataset sample predictions.")
 
 @app.get("/health")
+@app.get("/api/health")
 def health_check():
     manifest_path = M6_FINAL_DIR / "SHA256_manifest.json"
     manifest = {}
@@ -181,7 +184,19 @@ async def predict_ultrasound_case(file: UploadFile = File(...)):
         "override_rule_triggered": "Q_seg < 0.60 Mandatory Referral" if q_seg_score < 0.60 else "None"
     }
 
+
+# Mount static frontend for all-in-one deployment if static directory exists
+APP_DIR = Path(__file__).resolve().parent
+BREASTVISION_DIST = BASE_DIR / "breastvision" / "dist"
+
+if BREASTVISION_DIST.exists() and (BREASTVISION_DIST / "index.html").exists():
+    app.mount("/mobile", StaticFiles(directory=str(BREASTVISION_DIST), html=True), name="mobile_frontend")
+
+if (APP_DIR / "index.html").exists():
+    app.mount("/", StaticFiles(directory=str(APP_DIR), html=True), name="web_prototype")
+
 if __name__ == "__main__":
     import uvicorn
-    # Bind host="0.0.0.0" so Android Studio Emulators (10.0.2.2) and Wi-Fi devices (10.38.243.216) can connect seamlessly
-    uvicorn.run(app, host="0.0.0.0", port=8008)
+    port = int(os.environ.get("PORT", 8008))
+    print(f"[+] Starting M6.0 Server on port {port}...")
+    uvicorn.run("backend:app", host="0.0.0.0", port=port, reload=False)

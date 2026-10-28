@@ -1,0 +1,12 @@
+services:
+  m6-platform:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: breastvision-m6
+    ports:
+      - "8008:8008"
+    environment:
+      - PORT=8008
+      - NODE_ENV=production
+    restart: unless-stopped

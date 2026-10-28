@@ -1,7 +1,8 @@
 // M6.0 Clinical Decision-Support Research Prototype Application Logic
 
 const API_HOSTNAME = window.location.hostname || "127.0.0.1";
-const API_URL = `http://${API_HOSTNAME}:8008`;
+const isLocal = API_HOSTNAME === "localhost" || API_HOSTNAME === "127.0.0.1" || window.location.protocol === "file:";
+const API_URL = window.__API_URL__ || (isLocal ? `http://${API_HOSTNAME}:8008` : "");
 
 const sampleCases = [
     {
