@@ -7,6 +7,15 @@ services:
     plan: free
     region: oregon
     healthCheckPath: /health
+    buildFilter:
+      paths:
+        - deploy/**
+        - MODEL_DEVELOPMENT/app/**
+        - MODEL_DEVELOPMENT/src/**
+        - MODEL_DEVELOPMENT/checkpoints/**
+        - breastvision/**
     envVars:
       - key: PORT
-        value: 8008
+        value: "8008"
+      - key: EXPO_PUBLIC_API_URL
+        value: "https://breastvision.runs-on.dev"
