@@ -185,15 +185,23 @@ async def predict_ultrasound_case(file: UploadFile = File(...)):
     }
 
 
-# Mount static frontend for all-in-one deployment if static directory exists
+# Mount static frontends for all-in-one deployment
 APP_DIR = Path(__file__).resolve().parent
+BREASTVISION_WEB = APP_DIR / "web"
 BREASTVISION_DIST = BASE_DIR / "breastvision" / "dist"
 
+# 1. Mount new responsive BreastVision Web App at /web
+if BREASTVISION_WEB.exists() and (BREASTVISION_WEB / "index.html").exists():
+    app.mount("/web", StaticFiles(directory=str(BREASTVISION_WEB), html=True), name="breastvision_web")
+
+# 2. Mount original React Native / Expo exported bundle at /mobile
 if BREASTVISION_DIST.exists() and (BREASTVISION_DIST / "index.html").exists():
     app.mount("/mobile", StaticFiles(directory=str(BREASTVISION_DIST), html=True), name="mobile_frontend")
 
+# 3. Mount M6 Clinical Prototype at /
 if (APP_DIR / "index.html").exists():
     app.mount("/", StaticFiles(directory=str(APP_DIR), html=True), name="web_prototype")
+
 
 if __name__ == "__main__":
     import uvicorn
