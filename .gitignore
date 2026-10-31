@@ -34,6 +34,7 @@ lerna-debug.log*
 # Expo & Web Build Outputs
 .expo/
 dist/
+!breastvision/dist/
 web-build/
 .next/
 out/
