@@ -2,15 +2,21 @@ import io
 import os
 import sys
 import json
+import time
+import re
 import torch
 import torch.nn.functional as F
 import numpy as np
 import pandas as pd
 from PIL import Image
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Depends
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+
+# Prevent decompression bomb attacks
+Image.MAX_IMAGE_PIXELS = 25000000
 
 # Add src/ to sys.path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -21,15 +27,97 @@ if str(SRC_DIR) not in sys.path:
 
 from step17_m5_segmentation_unet_v2 import MobileUNetV2
 
-app = FastAPI(title="M6.0 Clinical Decision Support PyTorch Inference API", version="6.0.0")
+# 1. Debug Mode Off by Default - No internal schema/docs exposed in production
+IS_DEBUG = os.environ.get("DEBUG", "false").lower() == "true"
+
+app = FastAPI(
+    title="M6.0 Clinical Decision Support PyTorch Inference API",
+    version="6.0.0",
+    docs_url="/docs" if IS_DEBUG else None,
+    redoc_url="/redoc" if IS_DEBUG else None,
+    openapi_url="/openapi.json" if IS_DEBUG else None,
+)
+
+# 2. Restrict CORS to authorized origins
+DEFAULT_ALLOWED = [
+    "http://localhost:8008",
+    "http://127.0.0.1:8008",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8081",
+    "http://127.0.0.1:8081",
+    "https://breastvision.runs-on.dev",
+]
+env_origins = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+ALLOWED_ORIGINS = env_origins if env_origins else DEFAULT_ALLOWED
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
+
+# 3. Security Headers Middleware (OWASP compliance)
+@app.middleware("http")
+async def apply_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    return response
+
+# 4. Rate Limiting Middleware (Sliding Window per IP)
+RATE_LIMIT_STORE = {}
+MAX_PREDICT_PER_MINUTE = 40
+
+@app.middleware("http")
+async def rate_limit_predict(request: Request, call_next):
+    if request.url.path.startswith("/api/predict"):
+        client_ip = request.client.host if request.client else "unknown"
+        now = time.time()
+        record = RATE_LIMIT_STORE.get(client_ip, [])
+        record = [t for t in record if now - t < 60]
+        if len(record) >= MAX_PREDICT_PER_MINUTE:
+            return JSONResponse(
+                status_code=429,
+                content={
+                    "error": "Too Many Requests",
+                    "detail": "Rate limit exceeded. Please wait 60 seconds before submitting further scans."
+                },
+                headers={"Retry-After": "60"}
+            )
+        record.append(now)
+        RATE_LIMIT_STORE[client_ip] = record
+    return await call_next(request)
+
+# 5. Global Exception Handler - Hide internal stack traces and server details
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    print(f"[!] Unhandled Exception on {request.method} {request.url.path}: {exc}")
+    return JSONResponse(
+        status_code=500,
+        content={
+            "error": "Internal Server Error",
+            "message": "An unexpected error occurred while processing the request. Error details have been logged securely."
+        }
+    )
+
+# 6. Optional Bearer Token / API Key Authentication
+API_AUTH_TOKEN = os.environ.get("API_AUTH_TOKEN", "").strip()
+
+def verify_authenticated(request: Request):
+    if not API_AUTH_TOKEN:
+        return True  # Public demo mode if no key configured
+    auth_header = request.headers.get("Authorization", "")
+    api_key_header = request.headers.get("X-API-KEY", "")
+    if auth_header == f"Bearer {API_AUTH_TOKEN}" or api_key_header == API_AUTH_TOKEN:
+        return True
+    raise HTTPException(status_code=401, detail="Authentication required: Invalid or missing API token.")
 
 M6_FINAL_DIR = MODEL_DEV_DIR / "checkpoints" / "M6_FINAL"
 
@@ -78,16 +166,58 @@ def health_check():
         "manifest": manifest
     }
 
+ALLOWED_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
+ALLOWED_MAGIC_BYTES = [
+    b"\x89PNG\r\n\x1a\n",      # PNG
+    b"\xff\xd8\xff",              # JPEG
+    b"RIFF",                        # WEBP (starts with RIFF)
+]
+MAX_UPLOAD_BYTES = 15 * 1024 * 1024  # 15 MB limit
+
 @app.post("/api/predict")
-async def predict_ultrasound_case(file: UploadFile = File(...)):
+async def predict_ultrasound_case(request: Request, file: UploadFile = File(...)):
+    # Verify authentication if configured
+    verify_authenticated(request)
+
+    # 1. Validate and Sanitize Filename (Path traversal & control characters removal)
+    raw_filename = file.filename or "scan.png"
+    clean_filename = re.sub(r"[^a-zA-Z0-9_.-]", "_", os.path.basename(raw_filename))
+    ext = os.path.splitext(clean_filename)[1].lower()
+    if ext not in ALLOWED_EXTENSIONS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid file extension '{ext}'. Allowed formats: {', '.join(ALLOWED_EXTENSIONS)}"
+        )
+
+    # 2. Read and Validate File Size (Memory exhaustion protection)
     contents = await file.read()
-    filename_lower = file.filename.lower() if file.filename else ""
+    if len(contents) == 0:
+        raise HTTPException(status_code=400, detail="Empty upload file.")
+    if len(contents) > MAX_UPLOAD_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Uploaded file exceeds maximum limit of {MAX_UPLOAD_BYTES // (1024 * 1024)}MB."
+        )
+
+    # 3. Magic Header Validation (MIME spoofing defense)
+    is_valid_header = any(contents.startswith(magic) for magic in ALLOWED_MAGIC_BYTES)
+    if not is_valid_header:
+        raise HTTPException(status_code=400, detail="Corrupted or invalid image header magic bytes.")
+
+    filename_lower = clean_filename.lower()
     
+    # 4. Decode and Verify Dimensions
     try:
         pil_img = Image.open(io.BytesIO(contents)).convert('RGB')
-    except Exception as e:
-        raise HTTPException(status_code=400, detail="Invalid image file.")
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid or unsupported image file encoding.")
         
+    width, height = pil_img.size
+    if width < 32 or height < 32:
+        raise HTTPException(status_code=400, detail="Image resolution is too low (< 32x32).")
+    if width > 4096 or height > 4096:
+        raise HTTPException(status_code=400, detail="Image resolution exceeds safe processing limits (> 4096x4096).")
+
     pil_img_resized = pil_img.resize((224, 224))
     img_np = np.array(pil_img_resized)
     gray_np = np.array(pil_img_resized.convert('L'))

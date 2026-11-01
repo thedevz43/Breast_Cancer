@@ -4,6 +4,17 @@
 const API_BASE = window.location.origin;
 const STORAGE_KEY = "breastvision.webStudies";
 
+// Security Sanitization Helper - OWASP XSS Prevention
+function escapeHtml(str) {
+  if (typeof str !== "string") return String(str ?? "");
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 let currentSelectedFile = null;
 let currentInferenceResult = null;
 let sampleCases = [
@@ -401,10 +412,10 @@ function loadSavedStudies() {
     return `
       <div class="study-card">
         <div class="study-main">
-          <img src="${s.image}" class="study-img" alt="Ultrasound">
+          <img src="${s.image ? escapeHtml(s.image) : ''}" class="study-img" alt="Ultrasound">
           <div class="study-meta">
-            <h4>${s.id} <span class="badge ${badgeClass}">${s.triage}</span></h4>
-            <p>${s.filename} • ${new Date(s.createdAt).toLocaleString()}</p>
+            <h4>${escapeHtml(s.id)} <span class="badge ${badgeClass}">${escapeHtml(s.triage)}</span></h4>
+            <p>${escapeHtml(s.filename)} • ${escapeHtml(new Date(s.createdAt).toLocaleString())}</p>
           </div>
         </div>
         <div style="display: flex; align-items: center; gap: 16px;">
@@ -412,7 +423,7 @@ function loadSavedStudies() {
             <div>Likelihood: <strong>${(s.prob * 100).toFixed(1)}%</strong></div>
             <div>QC: <strong>${(s.qc * 100).toFixed(1)}%</strong></div>
           </div>
-          <button class="btn-secondary" style="padding: 6px 10px; color: var(--rose);" onclick="deleteStudy('${s.id}')">
+          <button class="btn-secondary" style="padding: 6px 10px; color: var(--rose);" data-study-id="${escapeHtml(s.id)}" onclick="deleteStudy(this.getAttribute('data-study-id'))">
             🗑️
           </button>
         </div>

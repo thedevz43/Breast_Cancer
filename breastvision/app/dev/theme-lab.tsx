@@ -7,6 +7,7 @@ import { IconSymbol } from "@/components/ui/icon-symbol";
 import { SchemeColors, type ColorScheme } from "@/constants/theme";
 import { useColors } from "@/hooks/use-colors";
 import { useThemeContext } from "@/lib/theme-provider";
+import { useAuth } from "@/hooks/use-auth";
 
 type PaletteName = keyof typeof SchemeColors.light;
 
@@ -25,10 +26,34 @@ function ColorSwatch({ name, value }: { name: PaletteName; value: string }) {
 }
 
 export default function ThemeLabScreen() {
+  const { user, loading } = useAuth();
   const [pressCount, setPressCount] = useState(0);
   const [lastAction, setLastAction] = useState<string>("None yet");
   const { colorScheme, setColorScheme } = useThemeContext();
   const colors = useColors();
+
+  if (loading) {
+    return (
+      <ScreenContainer className="p-5 justify-center items-center">
+        <Text style={{ color: colors.muted }}>Verifying administrator credentials...</Text>
+      </ScreenContainer>
+    );
+  }
+
+  // Admin access control - Item 2 compliance
+  if (!user || (user as any).role !== "admin") {
+    return (
+      <ScreenContainer className="p-5 justify-center items-center">
+        <View style={{ maxWidth: 400, alignItems: "center", gap: 12 }}>
+          <IconSymbol name="lock" size={44} color="#C93C4B" />
+          <Text style={{ fontSize: 20, fontWeight: "800", color: colors.foreground }}>Admin Login Required</Text>
+          <Text style={{ textAlign: "center", color: colors.muted, fontSize: 13, lineHeight: 18 }}>
+            This internal developer route is restricted to authorized administrators. Please log in with an administrator account to continue.
+          </Text>
+        </View>
+      </ScreenContainer>
+    );
+  }
 
   const swatches = useMemo(
     () =>
