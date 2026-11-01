@@ -11,7 +11,9 @@ WORKDIR /app
 
 # ─── 1. Install dependencies ───────────────────────────────────────────────
 COPY breastvision/package.json breastvision/pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
+# Install ALL deps (including devDeps like esbuild) so the build step works.
+# The runtime stage only copies the final artifacts — devDeps never reach prod.
+RUN pnpm install --frozen-lockfile
 
 # ─── 2. Copy source & pre-built frontend ───────────────────────────────────
 # Server source files
