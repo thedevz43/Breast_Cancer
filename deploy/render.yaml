@@ -1,21 +1,27 @@
 services:
   - type: web
-    name: breastvision-platform
-    env: docker
-    dockerfilePath: ./deploy/Dockerfile
-    dockerContext: .
-    plan: free
+    name: breastvision
+    runtime: node
     region: oregon
-    healthCheckPath: /health
+    plan: free
+    rootDir: breastvision
+    buildCommand: pnpm install --frozen-lockfile && pnpm expo export --platform web && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /api/health
     buildFilter:
       paths:
-        - deploy/**
-        - MODEL_DEVELOPMENT/app/**
-        - MODEL_DEVELOPMENT/src/**
-        - MODEL_DEVELOPMENT/checkpoints/**
         - breastvision/**
+        - deploy/render.yaml
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: PORT
-        value: "8008"
+        value: "3000"
       - key: EXPO_PUBLIC_API_URL
         value: "https://breastvision.runs-on.dev"
+      # Set these secrets in Render Dashboard → Environment:
+      # - key: JWT_SECRET          (min 32 chars, random)
+      # - key: DATABASE_URL        (mysql://user:pass@host/db)
+      # - key: OAUTH_SERVER_URL
+      # - key: VITE_APP_ID
+      # - key: OWNER_OPEN_ID

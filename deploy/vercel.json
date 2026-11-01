@@ -1,17 +1,23 @@
 {
   "version": 2,
+  "buildCommand": "cd breastvision && pnpm install --frozen-lockfile && pnpm expo export --platform web && pnpm build",
+  "outputDirectory": "breastvision/dist",
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)",     "destination": "/index.html" }
+  ],
+  "headers": [
     {
       "source": "/api/(.*)",
-      "destination": "https://breastvision-api.onrender.com/api/$1"
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
     },
     {
-      "source": "/mobile/(.*)",
-      "destination": "/breastvision/dist/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/MODEL_DEVELOPMENT/app/$1"
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
     }
   ]
 }

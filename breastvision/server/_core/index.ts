@@ -2,11 +2,21 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
+import path from "path";
+import { fileURLToPath } from "url";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+
+// Resolve __dirname in ESM context
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// The Expo static web build lives at <repo>/breastvision/dist
+// In Docker it is copied to /app/dist; locally it is two dirs up from server/_core/
+const STATIC_DIR = path.resolve(__dirname, "../../dist");
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -152,6 +162,22 @@ async function startServer() {
       message: "An unexpected error occurred. Please contact the administrator or retry.",
     });
   });
+
+  // 5. Serve the Expo web static bundle for all non-API routes
+  //    API routes (/api/*, /manus-storage/*) are matched above — everything
+  //    else falls through to the SPA index.html (client-side routing).
+  const fs = await import("fs");
+  if (fs.existsSync(STATIC_DIR)) {
+    app.use(express.static(STATIC_DIR));
+    // SPA fallback — serve index.html for any unmatched route so Expo Router
+    // handles client-side navigation correctly.
+    app.use((_req, res) => {
+      res.sendFile(path.join(STATIC_DIR, "index.html"));
+    });
+    console.log(`[static] Serving BreastVision web bundle from: ${STATIC_DIR}`);
+  } else {
+    console.warn(`[static] WARNING: Expo dist not found at ${STATIC_DIR}. Run 'pnpm expo export --platform web' first.`);
+  }
 
   const preferredPort = parseInt(process.env.PORT || "3000");
   const port = await findAvailablePort(preferredPort);

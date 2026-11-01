@@ -1,4 +1,4 @@
-﻿name: 🚀 Build & Deploy to Render (breastvision.runs-on.dev)
+name: 🚀 Build & Deploy BreastVision to Render (breastvision.runs-on.dev)
 
 on:
   push:
@@ -12,24 +12,59 @@ concurrency:
 
 jobs:
   build-and-validate:
-    name: 🐋 Build Docker Image
+    name: 🏗️ Build BreastVision (Node.js + Expo Web)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: breastvision
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker image (validation build)
-        uses: docker/build-push-action@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          context: .
-          file: ./deploy/Dockerfile
-          push: false
-          tags: breastvision-platform:ci-${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('breastvision/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check
+        run: pnpm check
+
+      - name: Export Expo web bundle
+        run: pnpm expo export --platform web
+
+      - name: Build Express server
+        run: pnpm build
+
+      - name: Verify build output
+        run: |
+          echo "=== Expo web bundle (dist/) ==="
+          ls -lh dist/
+          echo "=== Express server bundle (dist-server/) ==="
+          ls -lh dist-server/ 2>/dev/null || echo "dist-server not present (built inside Docker/Render)"
+          echo "=== Health: index.html present ==="
+          test -f dist/index.html && echo "✅ index.html found" || (echo "❌ index.html missing" && exit 1)
 
   deploy-to-render:
     name: 🌐 Deploy to Render
@@ -43,8 +78,8 @@ jobs:
       - name: Trigger Render Deploy Hook
         run: |
           if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
-            echo "RENDER_DEPLOY_HOOK_URL secret not set - skipping."
-            echo "Follow DEPLOYMENT_RUNS_ON.md to add it under Settings > Secrets > Actions."
+            echo "RENDER_DEPLOY_HOOK_URL secret not set — skipping."
+            echo "Add it under Settings > Secrets > Actions (see DEPLOYMENT_RUNS_ON.md)."
             exit 0
           fi
           echo "Triggering Render deploy..."
@@ -63,13 +98,13 @@ jobs:
           MAX_RETRIES=12
           RETRY_INTERVAL=15
           for i in $(seq 1 $MAX_RETRIES); do
-            HTTP=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://breastvision.runs-on.dev/health" 2>/dev/null || echo "000")
-            echo "Attempt $i/$MAX_RETRIES - /health returned: $HTTP"
+            HTTP=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://breastvision.runs-on.dev/api/health" 2>/dev/null || echo "000")
+            echo "Attempt $i/$MAX_RETRIES — /api/health returned: $HTTP"
             if [ "$HTTP" = "200" ]; then
-              echo "breastvision.runs-on.dev is LIVE!"
+              echo "✅ breastvision.runs-on.dev is LIVE!"
               exit 0
             fi
             sleep $RETRY_INTERVAL
           done
-          echo "Health-check timed out - check Render logs."
+          echo "Health-check timed out — check Render logs."
           exit 1
