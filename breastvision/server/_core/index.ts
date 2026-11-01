@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
+import fs from "fs";
 import net from "net";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -14,9 +15,29 @@ import { createContext } from "./context";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// The Expo static web build lives at <repo>/breastvision/dist
-// In Docker it is copied to /app/dist; locally it is two dirs up from server/_core/
-const STATIC_DIR = path.resolve(__dirname, "../../dist");
+// Find the Expo static web build directory (must contain index.html)
+// Handles:
+// 1. Docker runtime: /app/dist-server/index.js -> /app/dist (../dist)
+// 2. CWD root: process.cwd()/dist or process.cwd()/breastvision/dist
+// 3. Dev mode: server/_core/index.ts -> ../../dist
+function resolveStaticDir(): string {
+  const candidateDirs = [
+    path.resolve(__dirname, "../dist"),
+    path.resolve(process.cwd(), "dist"),
+    path.resolve(__dirname, "../../dist"),
+    path.resolve(process.cwd(), "breastvision/dist"),
+  ];
+
+  for (const dir of candidateDirs) {
+    if (fs.existsSync(path.join(dir, "index.html"))) {
+      return dir;
+    }
+  }
+
+  return path.resolve(__dirname, "../dist");
+}
+
+const STATIC_DIR = resolveStaticDir();
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -166,8 +187,7 @@ async function startServer() {
   // 5. Serve the Expo web static bundle for all non-API routes
   //    API routes (/api/*, /manus-storage/*) are matched above — everything
   //    else falls through to the SPA index.html (client-side routing).
-  const fs = await import("fs");
-  if (fs.existsSync(STATIC_DIR)) {
+  if (fs.existsSync(path.join(STATIC_DIR, "index.html"))) {
     app.use(express.static(STATIC_DIR));
     // SPA fallback — serve index.html for any unmatched route so Expo Router
     // handles client-side navigation correctly.
@@ -176,7 +196,20 @@ async function startServer() {
     });
     console.log(`[static] Serving BreastVision web bundle from: ${STATIC_DIR}`);
   } else {
-    console.warn(`[static] WARNING: Expo dist not found at ${STATIC_DIR}. Run 'pnpm expo export --platform web' first.`);
+    console.warn(`[static] WARNING: index.html not found in ${STATIC_DIR}.`);
+    app.use((_req, res) => {
+      res.status(500).type("text/html").send(`
+        <!DOCTYPE html>
+        <html>
+          <head><title>BreastVision</title></head>
+          <body style="font-family:sans-serif;padding:40px;line-height:1.6;max-width:600px;margin:auto">
+            <h2>BreastVision Web App</h2>
+            <p>Frontend static bundle is not available at <code>${STATIC_DIR}</code>.</p>
+            <p>Please ensure <code>pnpm expo export --platform web</code> was executed.</p>
+          </body>
+        </html>
+      `);
+    });
   }
 
   const preferredPort = parseInt(process.env.PORT || "3000");
