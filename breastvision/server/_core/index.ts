@@ -10,6 +10,9 @@ import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+import { sdk } from "./sdk";
+import * as db from "../db";
+import * as mongo from "../mongodb";
 
 // Resolve __dirname in ESM context
 const __filename = fileURLToPath(import.meta.url);
@@ -162,7 +165,56 @@ async function startServer() {
   registerOAuthRoutes(app);
 
   app.get("/api/health", (_req, res) => {
-    res.json({ ok: true, timestamp: Date.now() });
+    res.json({ ok: true, timestamp: Date.now(), database: mongo.isMongoConfigured() ? "mongodb" : "in-memory/mysql" });
+  });
+
+  app.get("/api/database/status", async (_req, res) => {
+    const stats = await db.getDatabaseStats();
+    res.json({
+      ok: true,
+      ...stats,
+    });
+  });
+
+  // REST API for studies persistence
+  app.get("/api/studies", async (req, res) => {
+    let userOpenId = "anonymous";
+    try {
+      const user = await sdk.authenticateRequest(req);
+      if (user?.openId) userOpenId = user.openId;
+    } catch {}
+    const list = await db.listStudies(userOpenId);
+    res.json({ studies: list, count: list.length });
+  });
+
+  app.post("/api/studies", async (req, res) => {
+    let userOpenId = "anonymous";
+    try {
+      const user = await sdk.authenticateRequest(req);
+      if (user?.openId) userOpenId = user.openId;
+    } catch {}
+
+    const { studyId, filename, uri, probability, quality, triage, notes, width, height, raw } = req.body;
+    if (!studyId || !filename || !triage) {
+      res.status(400).json({ error: "Missing required fields: studyId, filename, triage" });
+      return;
+    }
+
+    const saved = await db.saveStudy({
+      studyId: String(studyId),
+      userOpenId,
+      filename: String(filename),
+      uri: uri ? String(uri) : null,
+      probability: typeof probability === "number" ? probability : null,
+      quality: typeof quality === "number" ? quality : null,
+      triage: String(triage),
+      notes: notes ? String(notes) : null,
+      width: typeof width === "number" ? width : null,
+      height: typeof height === "number" ? height : null,
+      raw: raw && typeof raw === "object" ? raw : null,
+    });
+
+    res.json(saved);
   });
 
   app.use(
@@ -221,6 +273,13 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`[api] server listening on port ${port}`);
+    if (mongo.isMongoConfigured()) {
+      mongo.connectMongo().catch((err) => {
+        console.warn("[MongoDB] Background connection attempt error:", err);
+      });
+    } else {
+      console.log("[MongoDB] MONGODB_URI not set. Set MONGODB_URI to enable persistent MongoDB storage.");
+    }
   });
 }
 

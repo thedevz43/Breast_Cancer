@@ -141,32 +141,37 @@ export async function getMe(): Promise<{
   }
 }
 
-// Establish session cookie on the backend (3000-xxx domain)
-// Called after receiving token via postMessage to get a proper Set-Cookie from the backend
-export async function establishSession(token: string): Promise<boolean> {
+// Sync study to backend MongoDB
+export async function syncStudyToBackend(study: {
+  studyId: string;
+  filename: string;
+  uri?: string | null;
+  probability?: number | null;
+  quality?: number | null;
+  triage: string;
+  notes?: string | null;
+  width?: number | null;
+  height?: number | null;
+  raw?: Record<string, unknown> | null;
+}): Promise<any> {
   try {
-    console.log("[API] establishSession: setting cookie on backend...");
-    const baseUrl = getApiBaseUrl();
-    const url = `${baseUrl}/api/auth/session`;
-
-    const response = await fetch(url, {
+    return await apiCall("/api/studies", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      credentials: "include", // Important: allows Set-Cookie to be stored
+      body: JSON.stringify(study),
     });
+  } catch (err) {
+    console.warn("[API] Failed to sync study to MongoDB backend:", err);
+    return null;
+  }
+}
 
-    if (!response.ok) {
-      console.error("[API] establishSession failed:", response.status);
-      return false;
-    }
-
-    console.log("[API] establishSession: cookie set successfully");
-    return true;
-  } catch (error) {
-    console.error("[API] establishSession error:", error);
-    return false;
+// Fetch all studies from backend MongoDB
+export async function fetchStudiesFromBackend(): Promise<any[]> {
+  try {
+    const res = await apiCall<{ studies: any[]; count: number }>("/api/studies");
+    return res.studies || [];
+  } catch (err) {
+    console.warn("[API] Failed to fetch studies from MongoDB backend:", err);
+    return [];
   }
 }

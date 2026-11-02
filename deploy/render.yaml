@@ -20,8 +20,9 @@ services:
       - key: EXPO_PUBLIC_API_URL
         value: "https://breastvision.runs-on.dev"
       # Set these secrets in Render Dashboard → Environment:
+      # - key: MONGODB_URI         (mongodb+srv://user:pass@cluster.mongodb.net/breastvision)
       # - key: JWT_SECRET          (min 32 chars, random)
-      # - key: DATABASE_URL        (mysql://user:pass@host/db)
+      # - key: DATABASE_URL        (optional mysql or fallback)
       # - key: OAUTH_SERVER_URL
       # - key: VITE_APP_ID
       # - key: OWNER_OPEN_ID

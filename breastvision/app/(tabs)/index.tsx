@@ -14,6 +14,7 @@ import {
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { getTriage, type Triage } from "@/lib/triage";
+import { syncStudyToBackend } from "@/lib/_core/api";
 
 const LOCAL_IP = "10.38.243.216";
 const EMULATOR_IP = "10.0.2.2";
@@ -187,6 +188,20 @@ export default function WorkspaceScreen() {
   const saveStudies = (next: Study[]) => {
     setStudies(next);
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    const newest = next[0];
+    if (newest) {
+      syncStudyToBackend({
+        studyId: newest.id,
+        filename: newest.filename,
+        uri: newest.uri,
+        probability: newest.probability,
+        quality: newest.quality,
+        triage: newest.triage,
+        width: newest.width,
+        height: newest.height,
+        raw: newest.raw,
+      }).catch(() => undefined);
+    }
   };
 
   const activeStudy = useMemo(() => studies.find((item) => item.id === activeId) ?? studies[0], [studies, activeId]);

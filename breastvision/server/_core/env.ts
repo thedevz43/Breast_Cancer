@@ -21,6 +21,7 @@ export const ENV = {
   appId: process.env.VITE_APP_ID ?? "",
   cookieSecret: getSecureCookieSecret(),
   databaseUrl: process.env.DATABASE_URL ?? "",
+  mongodbUri: process.env.MONGODB_URI ?? process.env.MONGO_URL ?? "",
   oAuthServerUrl: process.env.OAUTH_SERVER_URL ?? "",
   ownerOpenId: process.env.OWNER_OPEN_ID ?? "",
   isProduction,

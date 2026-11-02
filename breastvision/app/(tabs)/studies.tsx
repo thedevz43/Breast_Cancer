@@ -3,13 +3,41 @@ import { useEffect, useMemo, useState } from "react";
 import { FlatList, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { fetchStudiesFromBackend } from "@/lib/_core/api";
 
 type Study = { id: string; createdAt: string; uri: string; filename: string; probability?: number; quality?: number; triage: string };
 const KEY = "breastvision.localStudies";
 const tone = (t: string) => t === "BENIGN TRIAGE" ? "#168C78" : t === "REFERRAL REQUIRED" || t === "MALIGNANT TRIAGE" ? "#C93C4B" : "#C47A12";
 export default function StudiesScreen() {
   const [studies, setStudies] = useState<Study[]>([]); const [query, setQuery] = useState("");
-  useEffect(() => { AsyncStorage.getItem(KEY).then((v) => v && setStudies(JSON.parse(v))).catch(() => undefined); }, []);
+  useEffect(() => {
+    AsyncStorage.getItem(KEY).then((v) => v && setStudies(JSON.parse(v))).catch(() => undefined);
+    fetchStudiesFromBackend()
+      .then((backendStudies) => {
+        if (backendStudies && backendStudies.length > 0) {
+          const mapped: Study[] = backendStudies.map((s: any) => ({
+            id: s.studyId || s.id,
+            createdAt: s.createdAt || new Date().toISOString(),
+            uri: s.uri || "",
+            filename: s.filename || "Ultrasound",
+            probability: s.probability,
+            quality: s.quality,
+            triage: s.triage || "BENIGN TRIAGE",
+          }));
+          setStudies((prev) => {
+            const map = new Map<string, Study>();
+            prev.forEach((item) => map.set(item.id, item));
+            mapped.forEach((item) => map.set(item.id, item));
+            const merged = Array.from(map.values()).sort(
+              (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            );
+            AsyncStorage.setItem(KEY, JSON.stringify(merged));
+            return merged;
+          });
+        }
+      })
+      .catch(() => undefined);
+  }, []);
   const filtered = useMemo(() => studies.filter((s) => s.id.toLowerCase().includes(query.toLowerCase()) || s.filename.toLowerCase().includes(query.toLowerCase())), [studies, query]);
   const remove = async (id: string) => { const next = studies.filter((s) => s.id !== id); setStudies(next); await AsyncStorage.setItem(KEY, JSON.stringify(next)); };
   return <ScreenContainer className="px-4" edges={["top", "left", "right", "bottom"]}><FlatList data={filtered} keyExtractor={(item) => item.id} contentContainerStyle={styles.content} ListHeaderComponent={<><Text style={styles.eyebrow}>LOCAL RESEARCH SESSION</Text><Text style={styles.title}>Studies</Text><Text style={styles.subtitle}>Saved inference results stay on this device.</Text><View style={styles.search}><IconSymbol name="search" size={18} color="#7890A8" /><TextInput value={query} onChangeText={setQuery} placeholder="Search study ID or filename" placeholderTextColor="#8BA4BC" style={styles.input} /></View></>} ListEmptyComponent={<View style={styles.empty}><IconSymbol name="folder-open" size={30} color="#8BA4BC" /><Text style={styles.emptyTitle}>No local studies yet</Text><Text style={styles.subtitle}>Completed analyses will appear here.</Text></View>} renderItem={({ item }) => <View style={styles.card}><View style={styles.row}><Image source={{ uri: item.uri }} style={styles.thumb} /><View style={{ flex: 1, gap: 3 }}><Text style={styles.id}>{item.id}</Text><Text style={styles.date}>{new Date(item.createdAt).toLocaleString()}</Text><Text style={{ color: tone(item.triage), fontSize: 11, fontWeight: "800" }}>{item.triage}</Text></View><Pressable onPress={() => remove(item.id)} accessibilityLabel={`Delete ${item.id}`}><IconSymbol name="delete-outline" size={20} color="#8BA4BC" /></Pressable></View><View style={styles.metrics}><Text style={styles.metric}>Likelihood <Text style={styles.metricValue}>{item.probability === undefined ? "—" : `${(item.probability * 100).toFixed(1)}%`}</Text></Text><Text style={styles.metric}>QC <Text style={styles.metricValue}>{item.quality === undefined ? "—" : item.quality.toFixed(2)}</Text></Text></View></View>} /></ScreenContainer>;
