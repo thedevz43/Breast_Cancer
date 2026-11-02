@@ -13,6 +13,13 @@ import { createContext } from "./context";
 import { sdk } from "./sdk";
 import * as db from "../db";
 import * as mongo from "../mongodb";
+import multer from "multer";
+import { predictUltrasound } from "../predictor";
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 25 * 1024 * 1024 }, // 25MB
+});
 
 // Resolve __dirname in ESM context
 const __filename = fileURLToPath(import.meta.url);
@@ -164,8 +171,56 @@ async function startServer() {
   registerStorageProxy(app);
   registerOAuthRoutes(app);
 
-  app.get("/api/health", (_req, res) => {
-    res.json({ ok: true, timestamp: Date.now(), database: mongo.isMongoConfigured() ? "mongodb" : "in-memory/mysql" });
+  app.get(["/health", "/api/health"], (_req, res) => {
+    res.json({
+      status: "HEALTHY",
+      ok: true,
+      timestamp: Date.now(),
+      model_version: "M6.0-FROZEN-FINAL",
+      server_engine: "Node.js 22 + Express (BreastVision)",
+      database: mongo.isMongoConfigured() ? "mongodb" : "in-memory/mysql",
+    });
+  });
+
+  // POST /api/predict: Ultrasound frame inference and triage
+  app.post("/api/predict", upload.single("file"), async (req, res) => {
+    try {
+      const file = req.file;
+      const filename = file?.originalname || req.body?.filename || "ultrasound_scan.png";
+      const buffer = file?.buffer;
+
+      const result = predictUltrasound(filename, buffer);
+
+      // Auto-save to MongoDB studies collection
+      let userOpenId = "anonymous";
+      try {
+        const user = await sdk.authenticateRequest(req);
+        if (user?.openId) userOpenId = user.openId;
+      } catch {}
+
+      const studyId = `BR-${Date.now().toString().slice(-5)}`;
+      await db
+        .saveStudy({
+          studyId,
+          userOpenId,
+          filename,
+          uri: null,
+          probability: result.calibrated_probability,
+          quality: result.segmentation_qc_score,
+          triage: result.referral_decision,
+          notes: result.triage_desc,
+          raw: result as unknown as Record<string, unknown>,
+        })
+        .catch(() => undefined);
+
+      res.json(result);
+    } catch (err: unknown) {
+      console.error("[Predict:Error]", err);
+      res.status(500).json({
+        error: "Inference Error",
+        message: "Failed to process ultrasound image",
+      });
+    }
   });
 
   app.get("/api/database/status", async (_req, res) => {
